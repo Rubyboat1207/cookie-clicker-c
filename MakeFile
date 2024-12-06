@@ -1,0 +1,5 @@
+build:
+	gcc main.c factory.c grandma.c monkey.c tree.c utils.c events.c -o cookie_clicker.exe
+
+debug:
+	gcc -static-libgcc -gdwarf-2 main.c factory.c grandma.c monkey.c tree.c utils.c events.c -o cookie_clicker_dbg.exe
