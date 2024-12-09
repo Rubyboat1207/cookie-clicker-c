@@ -6,7 +6,7 @@
 #include"utils.h"
 #include<math.h>
 
-RandomEventType* new_event(void (*on_triggered)(), void(*on_timeout)(), bool(*on_clicked)(char*,double*)) {
+RandomEventType* new_event(void (*on_triggered)(), void(*on_timeout)(), bool(*on_clicked)(double*)) {
     RandomEventType* event = calloc(1, sizeof(RandomEventType));
 
     event->on_triggered = on_triggered;
@@ -25,8 +25,8 @@ void golden_cookie_on_timeout() {
     printf("The cookie has disappeared!\n");
 }
 
-bool golden_cookie_clicked(char* input, double* cookies) {
-    if(strcmp(input, "c") == 0) {
+bool golden_cookie_clicked(double* cookies) {
+    if(strcmp("", "c") == 0) {
         int add = rand_range(0, 100) * 100 * fmin((*cookies / 10000), 1);
         *cookies += add;
 

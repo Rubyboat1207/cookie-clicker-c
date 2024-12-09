@@ -66,7 +66,7 @@ void tr_free(FactoryType* this) {
 }
 
 FactoryType* init_tree() {
-    FactoryType* tree = factory_new("Cookie Tree", "tr", 5);
+    FactoryType* tree = factory_new("Cookie Tree", "tr", 5, NULL);
 
     tree->create_instance = tr_create_instance;
     tree->get_cost = tr_get_cost;

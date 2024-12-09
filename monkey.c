@@ -110,7 +110,7 @@ void mk_free(FactoryType* this) {
 }
 
 FactoryType* init_monkey() {
-    FactoryType* monkey = factory_new("Typewriter Monkey", "mk", 1);
+    FactoryType* monkey = factory_new("Typewriter Monkey", "mk", 1, NULL);
 
     monkey->create_instance = mk_create_instance;
     monkey->get_cost = mk_get_cost;

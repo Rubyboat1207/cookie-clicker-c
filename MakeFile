@@ -1,5 +1,8 @@
+run: build
+	./cookie_clicker
+
 build:
-	gcc main.c factory.c grandma.c monkey.c tree.c utils.c events.c -o cookie_clicker.exe
+	gcc main.c -Llib -lraylib -lgdi32 -lwinmm -Iinclude factory.c grandma.c monkey.c tree.c utils.c events.c -o cookie_clicker.exe
 
 debug:
-	gcc -static-libgcc -gdwarf-2 main.c factory.c grandma.c monkey.c tree.c utils.c events.c -o cookie_clicker_dbg.exe
+	gcc main.c -Llib -lraylib -lgdi32 -lwinmm -Iinclude -static-libgcc -gdwarf-2 factory.c grandma.c monkey.c tree.c utils.c events.c -o cookie_clicker_dbg.exe

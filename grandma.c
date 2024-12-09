@@ -65,8 +65,11 @@ void gm_free(FactoryType* this) {
     free(this);
 }
 
+Texture2D gm_texture;
+
 FactoryType* init_grandma() {
-    FactoryType* grandmas = factory_new("Grandma", "gm", 0.2);
+    gm_texture = LoadTexture("./assets/Grandma.png");
+    FactoryType* grandmas = factory_new("Grandma", "gm", 0.2, &gm_texture);
 
     grandmas->create_instance = gm_create_instance;
     grandmas->get_cost = gm_get_cost;
